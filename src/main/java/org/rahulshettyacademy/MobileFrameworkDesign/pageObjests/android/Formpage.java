@@ -22,7 +22,7 @@ public class Formpage extends AndroidActions {
 	PageFactory.initElements(new  AppiumFieldDecorator(driver),this);
  }
 	
-	@AndroidFindBy(id ="android:id/text1")
+	@AndroidFindBy(id ="com.androidsample.generalstore:id/spinnerCountry")
 	private WebElement countryselction;
 	
 	public void setCountrySelection(String CountryName) {

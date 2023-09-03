@@ -31,20 +31,21 @@ public class Base {
 	public static void configureAppium() throws MalformedURLException {
 		
 		//Run server automatically
-		  service =new AppiumServiceBuilder().withAppiumJS(new File("C:\\Program Files\\Appium\\resources\\app\\node_modules\\appium\\lib\\main.js"))
+		  service =new AppiumServiceBuilder().withAppiumJS(new File("//usr//local//lib//node_modules//appium//build//lib//main.js"))
 		  .withIPAddress("127.0.0.1").usingPort(4723).withTimeout(Duration.ofSeconds(300)).build();
 		  
 		//service.start();
 		  
 		//create capabilities
 		UiAutomator2Options  options =new UiAutomator2Options();
-		options.setDeviceName("Shadat");
+		options.setDeviceName ("Demo2");
+		options.setChromedriverExecutable("//Users//apple//Downloads//Chrome driver//chromedriver");
 		//options.setApp(System.getProperty("user.dir")+"\\src\\test\\java\\resources\\ApiDemos-debug.apk");
 		
-		options.setApp(System.getProperty("user.dir")+"\\src\\test\\java\\resources\\General-Store.apk");
+		options.setApp("//Users//apple//eclipse-workspace//appiumlearning//appium//src//test//java//Resources//General-Store.apk");
 		options.setPlatformName("Android");
-		options.setCapability("platformVersion", "10.0");
-		options.setChromedriverExecutable("C:\\Users\\Shadat\\webdrivers\\chromedriver74.exe");
+		//options.setCapability("platformVersion", "10.0");
+	
 		
 		//create object for AndroidDriver/ IOSDriver
 		 driver =new AndroidDriver(new  URL("http://127.0.0.1:4723"), options);
